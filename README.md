@@ -27,7 +27,7 @@ También podemos hablar en los grupos de **GNU/Linux** en **Telegram**:
 
 [Ubuntu](https://t.me/ubuntu_es)
 
-[Unix](https://t.ne/unix_es)
+[Unix](https://t.me/unix_es)
 
 [VoidLinux](https://t.me/VoidLinux_es)
 
