@@ -1,4 +1,4 @@
-<p align="center">[Archlinux Latinoamérica](https://i.imgur.com/rsk13Kw.jpg)</p>
+[Archlinux Latinoamérica](https://i.imgur.com/rsk13Kw.jpg)
 
 # Archlinux
 
