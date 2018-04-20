@@ -31,8 +31,4 @@ También podemos hablar en los grupos de **GNU/Linux** en **Telegram**:
 
 [Unix](https://t.me/unix_es)
 
-[VoidLinux](https://t.me/VoidLinux_es)
-
-[LineageOS](https://t.me/LineageOS_es)
-
 Y sinó también pueden visitarme para más tutoriales en mi blog de [LinuxForAllSite](https://linuxforallsite.wordpress.com/).
