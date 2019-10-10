@@ -21,7 +21,7 @@ También podemos hablar en los grupos de **GNU/Linux** en **Telegram**:
 
 [ArchlinuxLatinoamerica](https://t.me/ArchlinuxlatinoAmerica)
 
-[Debian](https://t.me/debian_esp)
+[Debian](https://t.me/debianlatinoamerica)
 
 [Gentoo](https://t.me/gentoo_es)
 
