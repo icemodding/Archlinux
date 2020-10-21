@@ -27,6 +27,7 @@ findutils
 firefox
 flashplugin
 flex
+fontmatrix
 forticlientsslvpn
 freerdp
 gawk
@@ -50,6 +51,8 @@ hexchat
 htop
 i3-wm
 i3blocks
+irssi
+irssi-scripts-git
 jdownloader2
 lib32-alsa-lib
 lib32-alsa-plugins
@@ -77,6 +80,7 @@ openshot
 p7zip
 package-query
 pacman
+pacman-contrib
 pamixer
 patch
 pavucontrol
@@ -92,7 +96,6 @@ raw-thumbnailer
 remmina
 remmina-plugin-rdesktop
 rofi
-screenfetch
 scummvm
 sed
 simplescreenrecorder
