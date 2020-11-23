@@ -1,0 +1,24 @@
+1 - loadkeys la-latin1 timedatactl set-ntp true
+2 - cfdisk todas primarias y setear sda3 swap la sda1 booteable
+3 - mkfs.ext4 /dev/sda1 mkfs.ext4 /dev/sda2
+4 - mkswap /dev/sda3
+5 - mount /dev/sda1 /mnt
+6 - swapon /dev/sda3
+7 - mkdir /mnt/home
+8 - mount /dev/sda2 /mnt/home
+9 - pacstrap /mnt base nano linux linux-firmware grub-bios networkmanager mkinitcpio
+10 - genfstab -U /mnt >> /mnt/etc/fstab
+11 - arch-chroot /mnt
+12 - ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
+13 - hwclock --systohc
+14 - nano /etc/locale.gen luego logale-gen
+15 - nano /etc/locale.conf LANG=es_AR.UTF-8
+16 - nano /etc/vconsole.conf KEYMAP=la-latin1
+17 - nano /etc/hostname linuxeros
+18 - grub-install /dev/sda
+19 - grub-mkconfig -o /boot/grub/grub.cfg
+20 - mkinitcpio -p linux
+21 - passwd
+22 - exit o control d
+23 - umount -R /mnt
+24 - reboot

@@ -1,0 +1,11 @@
+1 - useradd -m -g users -G audio,video,storage,games,power,wheel -s /bin/bash linuxeros
+2 - passwd linuxeros
+3 - systemctl enable NetworkManager
+4 - systemctl start NetworkManager
+5 - pacman -S sudo
+6 - nano /etc/sudoers
+7 - buscamos la línea wheel y saco #
+8 - nano -l /etc/pacman.conf ponemos color y  agrego ILoveCandy 
+9 - instalo neofetch y muestro el sistema como quedo
+ 
+
