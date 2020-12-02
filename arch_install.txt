@@ -1,4 +1,4 @@
-# Instalación básica de Arch Linux.
+# Instalación básica de Arch Linux de acuerdo a la wiki.
 
 # Paso 1: Seteamos el teclado y hora
 loadkeys la-latin1 && timedatactl set-ntp true (éste último es opcional)
