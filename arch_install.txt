@@ -1,24 +1,66 @@
-1 - loadkeys la-latin1 timedatactl set-ntp true
-2 - cfdisk todas primarias y setear sda3 swap la sda1 booteable
-3 - mkfs.ext4 /dev/sda1 mkfs.ext4 /dev/sda2
-4 - mkswap /dev/sda3
-5 - mount /dev/sda1 /mnt
-6 - swapon /dev/sda3
-7 - mkdir /mnt/home
-8 - mount /dev/sda2 /mnt/home
-9 - pacstrap /mnt base nano linux linux-firmware grub-bios networkmanager mkinitcpio
-10 - genfstab -U /mnt >> /mnt/etc/fstab
-11 - arch-chroot /mnt
-12 - ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
-13 - hwclock --systohc
-14 - nano /etc/locale.gen luego logale-gen
-15 - nano /etc/locale.conf LANG=es_AR.UTF-8
-16 - nano /etc/vconsole.conf KEYMAP=la-latin1
-17 - nano /etc/hostname linuxeros
-18 - grub-install /dev/sda
-19 - grub-mkconfig -o /boot/grub/grub.cfg
-20 - mkinitcpio -p linux
-21 - passwd
-22 - exit o control d
-23 - umount -R /mnt
-24 - reboot
+# Instalación básica de Arch Linux.
+
+# Paso 1: Seteamos el teclado y hora
+loadkeys la-latin1 && timedatactl set-ntp true (éste último es opcional)
+
+# Paso 2: Realizamos las particiones que corresponden, en mi caso con 500GB, doy 40GB / - 3GB /swap - 457GB /home.
+cfdisk 
+
+# Paso 3: Formateamos particiones, recuerden que si ya tenemos /home con datos, NO la formateamos.
+mkfs.ext4 /dev/sda1 
+mkfs.ext4 /dev/sda2
+mkswap /dev/sda3
+
+# Paso 4: Montamos las particiones:
+mount /dev/sda1 /mnt
+swapon /dev/sda3
+
+# Paso 4-1: Creamos la partición /home (repito, en caso de no tenerla)
+mkdir /mnt/home
+
+# Paso 4-2: Montamos /home
+mount /dev/sda2 /mnt/home
+
+# Paso 5: Instalamos el sistema base y algunas herramientas
+pacstrap /mnt base nano linux linux-firmware grub-bios networkmanager mkinitcpio
+
+# Paso 6: Creamos el fstab con información de nuestro disco y particiones 
+genfstab -U /mnt >> /mnt/etc/fstab
+
+# Paso 7: Ingresamos a nuestra / 
+arch-chroot /mnt
+
+# Paso 8:  Configuramos una zona horaria
+ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
+
+# Paso 9: Configuramos la hora
+hwclock --systohc
+
+# Paso 10 Configuramos lenguaje/idioma de teclado y sistema
+nano /etc/locale.gen luego logale-gen
+nano /etc/locale.conf LANG=es_AR.UTF-8
+nano /etc/vconsole.conf KEYMAP=la-latin1
+
+# Paso 11: Configuramos nuestro host
+nano /etc/hostname linuxeros
+
+# Paso 12: Instalamos grub
+grub-install /dev/sda
+
+# Paso 13: Configuramos grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Paso 14: Creamos la imagen para que inicie el sistema
+mkinitcpio -p linux
+
+# Paso 15: Configuramos la contraseña de root
+passwd
+
+# Paso 16: Salimos del chroot
+exit o control d
+
+# Paso 17: Desmontamos nuestra /
+umount -R /mnt
+
+# Paso 18 : Reiniciamos y listo!
+reboot
